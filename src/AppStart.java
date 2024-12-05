@@ -1,6 +1,5 @@
 public class AppStart {
     public static void main(String[] args) {
-
-    //tes
+        // 안녕하세요
     }
 }
