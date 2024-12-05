@@ -1,6 +1,7 @@
 package model;
 
 public class MemberDto {
+
     // 데이터베이스 member 테이블과 매핑되는 객체 (데이터 저장 및 전달역할)
     private int uNumber; // 회원 번호
     private String uId; // 회원 아이디
