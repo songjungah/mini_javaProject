@@ -1,6 +1,6 @@
-drop table if exists mydb1203;
-create database mydb1203;
-use mydb1203;
+drop table if exists moviedb;
+create database moviedb;
+use moviedb;
 
 # 회원 테이블
 create table member (
