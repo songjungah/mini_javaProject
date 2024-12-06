@@ -31,4 +31,5 @@ public class MemberDto {
 
     // getter & setter 메서드 (데이터 읽고 쓰기 위한 접근자 메서드)
 
+
 }
