@@ -1,7 +1,7 @@
 package model;
 
 public class ReviewDto {
-    private int rv_Id;              //         int - 아이디
+    private int rv_Id;              //         int - 리뷰번호
     private String rv_Mvid;         // varchar(50) - 영화아이디
     private String rv_Date;         //        date - 등록일
     private int rv_Star;            //         int - 별점
@@ -31,9 +31,64 @@ public class ReviewDto {
         this.rv_Suggestion = rv_Suggestion;
     }
 
+    //getter setter
 
 
+    public int getRv_Id() {
+        return rv_Id;
+    }
 
+    public void setRv_Id(int rv_Id) {
+        this.rv_Id = rv_Id;
+    }
+
+    public String getRv_Mvid() {
+        return rv_Mvid;
+    }
+
+    public void setRv_Mvid(String rv_Mvid) {
+        this.rv_Mvid = rv_Mvid;
+    }
+
+    public String getRv_Date() {
+        return rv_Date;
+    }
+
+    public void setRv_Date(String rv_Date) {
+        this.rv_Date = rv_Date;
+    }
+
+    public int getRv_Star() {
+        return rv_Star;
+    }
+
+    public void setRv_Star(int rv_Star) {
+        this.rv_Star = rv_Star;
+    }
+
+    public String getRv_Content() {
+        return rv_Content;
+    }
+
+    public void setRv_Content(String rv_Content) {
+        this.rv_Content = rv_Content;
+    }
+
+    public int getRv_Member() {
+        return rv_Member;
+    }
+
+    public void setRv_Member(int rv_Member) {
+        this.rv_Member = rv_Member;
+    }
+
+    public boolean getRv_Suggestion() {
+        return rv_Suggestion;
+    }
+
+    public void setRv_Suggestion(boolean rv_Suggestion) {
+        this.rv_Suggestion = rv_Suggestion;
+    }
 }//class end
 
 

@@ -1,5 +1,6 @@
 package view;
 
+import controller.ReviewController;
 import model.ReviewDto;
 
 import java.util.ArrayList;
@@ -33,22 +34,23 @@ public class ReviewView {
         System.out.println("추천 비추천을 선택해주세요(true or false) : ");
         boolean good = scan.nextBoolean();
 
-        boolean result = ReviewController.getInstance().reiveiwWrtie(content,star,good);
+        boolean result = ReviewController.getInstance().reviewWrite(content,star,good);
+        //작성한 게시물을 controller에 전달.
     }
 
     void ReveiwPrint(){
-        ArrayList<ReviewDto> result = ReviewController.getInstance().reviewPrint;
+        ArrayList<ReviewDto> result = ReviewController.getInstance().reviewPrint();
 
         for(int index = 0; index<=result.size()-1;index++){
-            System.out.print("리뷰번호"  );
-            System.out.print("영화번호"  );
-            System.out.print("등록일"  );
+            System.out.print("리뷰번호" + result.get(index).getRv_Id()  );
+            System.out.print("영화번호" + result.get(index).getRv_Mvid()  );
+            System.out.print("등록일" + result.get(index).getRv_Date() );
 
-            System.out.print("리뷰 내용"  );
+            System.out.print("리뷰 내용" + result.get(index).getRv_Content()  );
 
-            System.out.print("회원 번호"  );
-            System.out.print("별점"  );
-            System.out.print("추천"   );
+            System.out.print("회원 번호" + result.get(index).getRv_Member()  );
+            System.out.print("별점" + result.get(index).getRv_Star()  );
+            System.out.print("추천" + result.get(index).getRv_Suggestion()   );
         }
     }
 
