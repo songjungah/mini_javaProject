@@ -1,7 +1,5 @@
 package model;
 
-import jdk.internal.icu.impl.CharacterIteratorWrapper;
-
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;

@@ -13,7 +13,7 @@ public class ReviewController {
 
     public boolean reviewWrite(String content,int star,boolean good){
         ReviewDto reviewDto = new ReviewDto(content,star,good);
-        return ReviewDao.getInstance().reviewPrint(reviewDto);}
+        return ReviewDao.getInstance().reviewWrite(reviewDto);}
 
     public ArrayList<ReviewDto> reviewPrint(){
         ArrayList<ReviewDto> result = ReviewDao.getInstance().reviewPrint();
