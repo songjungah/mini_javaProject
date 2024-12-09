@@ -13,13 +13,14 @@ public class MainVeiw {
     public void mainpage() { // 맨처음 나오는 화면
 
         while (true) {
-            System.out.println("1.영화검색 2.영화추천 3.로그인 4.회원가입 : ");
+            System.out.print("1.현재 상영작 보기 2.리뷰보기 3.영화추천 4.로그인 5.회원가입 6.로그아웃 : ");
             int choose = scan.nextInt();
-            if(choose == 1){/*영화검색*/}
-            else if(choose == 2){/*코메디 장르 선택*/}
-            else if(choose == 3){/*로그인*/}
-            else if(choose == 4){/*회원가입*/}
-
+            if(choose == 1){MovieView.getInstance().moviePrint();}
+            else if(choose == 2){ReviewView.getInstance().ReveiwPrint();}
+            else if(choose == 3){/*영화 추천*/}
+            else if(choose == 4){MemberView.getInstance().memberdLogin();}
+            else if(choose == 5){/*회원가입*/}
+            else if(choose == 6){MemberView.getInstance().memberLogout();}
 
 
         }//end while
