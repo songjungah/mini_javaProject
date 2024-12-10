@@ -24,7 +24,7 @@ mv_director varchar(50) not null, #감독
 mv_genre varchar(50) not null, #장르
 mv_class varchar(20) not null, #등급
 mv_time time not null, #러닝타임
-mv_detal varchar(100), #영화 설명
+mv_detal varchar(500), #영화 설명
 mv_date date, #개봉날짜
 mv_actor varchar(50), #출연진
 mv_startdate date, #등록일
@@ -50,7 +50,7 @@ create table review(
 );
 
 show tables;
-
+select * from movie;
 
 # movie table 입력값
 
@@ -120,7 +120,6 @@ insert into movie values(
 );
 
 
-
 # review table 입력 값
 insert into review values(
 	1, '가나다', '2024-12-10', 5, "너무 재미있어요. 추천합니다.", 1, true
@@ -134,3 +133,10 @@ insert into review values(
 insert into review values(
 	4, '카타파', '2024-12-07', 3, "적당히 볼만합니다.", 4, true
 );
+
+
+# member table 입력 값
+insert into member values(
+	
+);
+
