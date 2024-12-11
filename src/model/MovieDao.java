@@ -20,7 +20,7 @@ public class MovieDao extends Dao{
 
         try {
             // SQL 작성
-            String sql = "select * from movie";
+            String sql = "select * from movie;";
             // SQL 기재
             PreparedStatement ps = conn.prepareStatement(sql);
             // SQL 실행
@@ -33,7 +33,7 @@ public class MovieDao extends Dao{
                 String mv_Name = rs.getString("mv_Name");
                 String mv_Director = rs.getString("mv_Director");
                 String mv_Genre = rs.getString("mv_Genre");
-                int mv_Class = rs.getInt("mv_Class");
+                String mv_Class = rs.getString("mv_Class");
                 String mv_Time = rs.getString("mv_Time");
                 String mv_Detal = rs.getString("mv_Detal");
                 String mv_Date = rs.getString("mv_Date");
@@ -51,6 +51,7 @@ public class MovieDao extends Dao{
 
         } catch (SQLException e) {
             e.getMessage();
+            e.printStackTrace();
             System.out.println("[게시물 출력시 예외 발생]");
         }
 

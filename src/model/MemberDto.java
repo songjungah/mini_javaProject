@@ -29,6 +29,17 @@ public class MemberDto {
         this.uBirth = uBirth;
     }
 
+    public MemberDto(String uId, String uPw, String uName, int uAge, String uAdd, String uEmail, String uPhone, String uBirth) {
+        this.uId = uId;
+        this.uPw = uPw;
+        this.uName = uName;
+        this.uAge = uAge;
+        this.uAdd = uAdd;
+        this.uEmail = uEmail;
+        this.uPhone = uPhone;
+        this.uBirth = uBirth;
+    }
+
     // getter & setter 메서드 (데이터 읽고 쓰기 위한 접근자 메서드)
     // 회원 번호 getter
     public int getuNumber() {

@@ -1,6 +1,5 @@
 package model;
 
-import com.sun.org.apache.bcel.internal.generic.ACONST_NULL;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -151,6 +150,28 @@ public class MemberDao extends Dao {
             System.out.println("[회원 삭제 중 오류 발생] " + e.getMessage());
             return false;
         }
+    }
+
+    // 회원 로그인 메서드
+    public boolean loginMember(String id, String pwd){
+
+        try {
+            String sql = "select count(*) from member where u_id= ? and u_pw= ? ;";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, id);
+            ps.setString(2, pwd);
+
+            ResultSet rs = ps.executeQuery();
+
+            // 결과 처리
+            if (rs.next()) { // 결과를 읽을 수 있다면 ==  sql이 출력한 값이 있으면
+                // 데이터 읽기
+                int count = rs.getInt(1); //getInt(1) => 1열의 값 읽어 오기
+                return  count == 1; //count(가져온값)이 1이면  true 리턴
+            }
+        }
+        catch(SQLException e){e.printStackTrace();}
+        return false;
     }
 
 
