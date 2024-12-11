@@ -7,7 +7,7 @@ public class MovieDto {
     private String mv_Name;         // 영화제목
     private String mv_Director;     // 감독
     private String mv_Genre;        // 장르
-    private int mv_Class;           // 등급
+    private String mv_Class;           // 등급
     private String mv_Time;         // 러닝타임
     private String mv_Detal;        // 영화설명
     private String mv_Date;         // 개봉날짜
@@ -15,7 +15,7 @@ public class MovieDto {
     private String mv_Startdate;    // 등록일
 
     public MovieDto(int mv_Id, String mv_Name, String mv_Director, String mv_Genre,
-                    int mv_Class, String mv_Time, String mv_Detal, String mv_Date, String mv_Actor,
+                    String mv_Class, String mv_Time, String mv_Detal, String mv_Date, String mv_Actor,
                     String mv_Startdate)
     {
         this.mv_Id = mv_Id;
@@ -62,11 +62,11 @@ public class MovieDto {
         this.mv_Genre = mv_Genre;
     }
 
-    public int getMv_Class() {
+    public String getMv_Class() {
         return mv_Class;
     }
 
-    public void setMv_Class(int mv_Class) {
+    public void setMv_Class(String mv_Class) {
         this.mv_Class = mv_Class;
     }
 
