@@ -33,6 +33,7 @@ primary key(mv_id)
 
 drop table if exists review;
 drop table if exists movie;
+drop table if exists member;
 show index from movie;
 
  # 리뷰 테이블
@@ -42,15 +43,14 @@ create table review(
     rv_date date not null,
     rv_star int not null ,
     rv_content varchar(200) not null,
-    rv_member int unsigned ,
+    rv_member varchar(20) not null,
     rv_suggestion boolean,
     primary key(rv_id),
-    foreign key(rv_member) references member(u_number),
     foreign key(rv_id) references movie(mv_id)
 );
 
 show tables;
-
+select * from movie;
 
 # movie table 입력값
 
@@ -122,27 +122,27 @@ insert into movie values(
 
 # review table 입력 값
 insert into review values(
-	1, '가나다', '2024-12-10', 5, "너무 재미있어요. 추천합니다.", 1, true
+	1, '소방관', '2024-12-10', 5, "너무 재미있어요. 추천합니다.", 'abc', true
 );
 insert into review values(
-	2, '마바사', '2024-12-09', 4, "재미있어요.", 2, true
+	2, '1승', '2024-12-09', 4, "재미있어요.", 'def', true
 );
  insert into review values(
-	3, '아자차', '2024-12-08', 5, "정말 재미있었어요.", 3, true
+	3, '모아나2', '2024-12-08', 5, "정말 재미있었어요.", 'ghi', true
 );
 insert into review values(
 	4, '카타파', '2024-12-07', 3, "적당히 볼만합니다.", 4, true
 );
 
 
-
 # member table 입력 값
 insert into member values(
-	1, 'abc', '1234', '홍길동', 25, '인천시 부평구', 'abc@gamil.com', 01012345678, '2000-01-01'
+	1, 'abc', '1234', '홍길동', 25, '인천시 부평구', 'abc@gamil.com', '010-1234-5678', '2000-01-01'
 );
 insert into member values(
-	2, 'def', '5678', '안중근', 24, '서울시 마포구', 'dfe@naver.com', 01012345679, '2001-02-22'
+	2, 'def', '5678', '안중근', 24, '서울시 마포구', 'dfe@naver.com', '010-1234-5679', '2001-02-22'
 );
 insert into member values(
-	3, 'ghi', '9999', '유관순', 29, '경기도 부천시', 'ghi@gmail.com', 01099999999, '1996-09-19'
+	3, 'ghi', '9999', '유관순', 29, '경기도 부천시', 'ghi@gmail.com', '010-9999-9999', '1996-09-19'
 );
+

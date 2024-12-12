@@ -36,6 +36,7 @@ public class MovieView {
             System.out.println("개봉날짜 : " + result.get(index).getMv_Date());
             System.out.println("출연진 : " + result.get(index).getMv_Actor());
             System.out.println("등록일 : " + result.get(index).getMv_Startdate());
+            System.out.println("------------------------------------------------");
 
         }   // for e
 

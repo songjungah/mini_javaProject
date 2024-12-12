@@ -33,6 +33,7 @@ primary key(mv_id)
 
 drop table if exists review;
 drop table if exists movie;
+drop table if exists member;
 show index from movie;
 
  # 리뷰 테이블
