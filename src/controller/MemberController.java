@@ -15,18 +15,10 @@ public class MemberController {
     //로그인 상태를 다른 view에서 가져오기 위한 getter,setter
     // 멤버컨트롤러!
 
-
-
-
-
-
-
-
-
-
     //김이삭 작업
     public boolean memberLogin(String id,String pwd){
         boolean result = MemberDao.getInstance().loginMember(id,pwd);
+
         return result;
     }
 

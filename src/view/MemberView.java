@@ -73,7 +73,9 @@ public class MemberView {
 
             if(result){
                 System.out.println("[ 로그인 성공 ]");
+
                 MemberController.setLogin(true); // 로그인상태를 참으로
+
             }
             else{
                 System.out.println("아이디/비밀번호가 다릅니다.");

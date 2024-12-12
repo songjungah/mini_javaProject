@@ -16,6 +16,12 @@ public class MemberDto {
     // 기본 생성자(데이터 x 객체 초기화 시 사용)
     public MemberDto() {}
 
+    public MemberDto(int uNumber, String uId, String uPw) {
+        this.uNumber = uNumber;
+        this.uId = uId;
+        this.uPw = uPw;
+    }
+
     // 매개변수 생성자(모든 필드 초기화 생성자_데이터베이스 조회 or 새 데이터 삽입 시 사용)
     public MemberDto(int uNumber, String uId, String uPw, String uName, int uAge, String uAdd, String uEmail, String uPhone, String uBirth){
         this.uNumber = uNumber;
@@ -27,6 +33,11 @@ public class MemberDto {
         this.uEmail = uEmail;
         this.uPhone = uPhone;
         this.uBirth = uBirth;
+    }
+
+    public MemberDto(String uId, String uPw) {
+        this.uId = uId;
+        this.uPw = uPw;
     }
 
     public MemberDto(String uId, String uPw, String uName, int uAge, String uAdd, String uEmail, String uPhone, String uBirth) {

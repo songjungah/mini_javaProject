@@ -22,15 +22,16 @@ public class ReviewDao extends Dao {
             while (rs.next()) {
                 //실행 결과를 각 필드별로 호출
                 int rv_id = rs.getInt("rv_id");
-                String rv_Mvid = rs.getString("rv_Mvid");
-                String rv_Date = rs.getString("rv_Date");
-                int rv_Star = rs.getInt("rv_Star");
-                String rv_Content = rs.getString("rv_Content");
-                int rv_Member = rs.getInt("rv_Member");
-                boolean rv_Suggestion = rs.getBoolean("rv_Suggestion");
+                String rv_Name = rs.getString("rv_name");
+                String rv_Date = rs.getString("rv_date");
+                int rv_Star = rs.getInt("rv_star");
+                String rv_Content = rs.getString("rv_content");
+                String rv_Member = rs.getString("rv_member");
+                boolean rv_Suggestion = rs.getBoolean("rv_suggestion");
                 //레코드의 호출된 필드값들을 객체화 -> DAo 형태로 생성
 
-                ReviewDto reviewDto = new ReviewDto(rv_id, rv_Mvid, rv_Date, rv_Star, rv_Content, rv_Member, rv_Suggestion);
+                ReviewDto reviewDto = new ReviewDto(rv_id, rv_Name, rv_Date, rv_Star, rv_Content, rv_Member, rv_Suggestion);
+
                 // 1개의 레코드를 DTO 객체로 변환된 DTO로 리스트에 저장
 
                 list.add(reviewDto); //가져온 값을 리턴
@@ -43,7 +44,7 @@ public class ReviewDao extends Dao {
 
         public boolean reviewWrite(ReviewDto reviewDto) {
             //1. 리뷰 데이터 베이스 추가하는 SQL작성
-            String sql = "insert into review(rv_content,rv_star,rv_suggestion) values(?,?,?);";
+            String sql = "insert into review(rv_date,rv_content,rv_star,rv_suggestion) values(now(),?,?,?);";
             try{
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, reviewDto.getRv_Content());
