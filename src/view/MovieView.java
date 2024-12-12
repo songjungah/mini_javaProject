@@ -42,4 +42,36 @@ public class MovieView {
 
     }
 
+
+    // 추천 영화 관련 추가 내용입니다
+
+    // 추천된 영화 출력
+    public void showRecommendedMovies() {
+        ArrayList<MovieDto> recommendedMovies = MovieController.getInstance().getRecommendedMovies();
+
+        if (recommendedMovies.isEmpty()) {
+            System.out.println("추천된 영화가 없습니다.");
+        } else {
+            System.out.println("추천된 영화 목록:");
+            for (MovieDto movie : recommendedMovies) {
+                // getMvName()과 getMvDirector() 메소드 사용
+                System.out.println(movie.getMv_Name() + " (" + movie.getMv_Director() + ")");
+            }
+        }
+    }
+
+    // 영화 추천 버튼을 누르면 추천 처리
+    public void recommendMovie() {
+        System.out.print("추천할 영화 ID를 입력하세요: ");
+        int movieId = scan.nextInt();
+        scan.nextLine(); // 버퍼 비우기
+
+        boolean success = MovieController.getInstance().recommendReview(movieId);
+
+        if (success) {
+            System.out.println("영화가 성공적으로 추천되었습니다.");
+        } else {
+            System.out.println("영화 추천에 실패했습니다.");
+        }
+    }
 }
