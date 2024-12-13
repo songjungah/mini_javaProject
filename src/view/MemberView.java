@@ -3,6 +3,7 @@ package view;
 import controller.MemberController;
 import model.MemberDto;
 
+import java.lang.reflect.Member;
 import java.util.Scanner;
 
 public class MemberView {
@@ -12,16 +13,6 @@ public class MemberView {
     //싱글톤 작업
 
     Scanner scan = new Scanner(System.in); //스캔 사용
-
-
-
-
-
-
-
-
-
-
 
     //김이삭 작업
     //회원가입
@@ -69,6 +60,7 @@ public class MemberView {
 
             //1. 입력 받은 정보를 컨트롤로 이동
             //2. 로그인 결과를 result에 저장
+            MemberController.setLoginId(id);
             boolean result = MemberController.getInstance().memberLogin(id,pwd);
 
             if(result){

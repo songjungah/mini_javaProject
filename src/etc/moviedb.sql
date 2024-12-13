@@ -146,4 +146,7 @@ insert into member values(
 insert into member values(
 	3, 'ghi', '9999', '유관순', 29, '경기도 부천시', 'ghi@gmail.com', '010-9999-9999', '1996-09-19'
 );
+insert into member values(
+	4, 'admin', '1234', 'dma', 20, '경기도 부천시', 'dma', '010--0000-0000', '2001-01-01'
+);
 

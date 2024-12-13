@@ -18,22 +18,24 @@ public class MainVeiw {
             if(!MemberController.getLogin()) {
                 System.out.println();
                 System.out.println();
-                System.out.print("1.현재 상영작 보기 2.영화추천 3.로그인 4.회원가입 : ");
+                System.out.print("[ 비 로그인 상태 ]1.현재상영작 보기 2.영화추천 3.영화 검색 4.로그인 5.회원가입 : ");
                 int choose = scan.nextInt();
                 if (choose == 1) {/*현재 상영작 보기*/MovieView.getInstance().moviePrint();}
-                  else if (choose == 2) {/*영화 추천*/}
-                  else if (choose == 3) {/*로그인*/MemberView.getInstance().memberdLogin();}
-                  else if (choose == 4) {/*회원가입*/MemberView.getInstance().memberSign();}
+                  else if (choose == 2) {/*영화 추천*/MovieView.getInstance().showRecommendedMovies();}
+                  else if (choose == 3) {/*영화 검색*/MovieView.getInstance().genreMovie();}
+                  else if (choose == 4) {/*로그인*/MemberView.getInstance().memberdLogin();}
+                  else if (choose == 5) {/*회원가입*/MemberView.getInstance().memberSign();}
             }
             else{
                 System.out.println();
-                System.out.print("[ 로그인 상태 ] 1.현재 상영작 보기 2.리뷰보기 3.리뷰쓰기 4.영화추천 5.로그아웃 : ");
+                System.out.print("[ 로그인 상태 ] 1.현재 상영작 보기 2.영화 추천 3.영화 검색 4.리뷰보기 5.리뷰쓰기 6.로그아웃 : ");
                 int choose = scan.nextInt();
                     if (choose == 1) {/*현재 상영작 보기*/MovieView.getInstance().moviePrint();}
-                    else if (choose == 2) {/*리뷰보기*/ReviewView.getInstance().ReveiwPrint();}
-                    else if (choose == 3) {/*리뷰쓰기*/ReviewView.getInstance().ReveiwWrite();}
-                    else if (choose == 4) {/*영화 추천*/MovieView.getInstance().moviePrint();}
-                    else if (choose == 5) {/*로그아웃*/MemberView.getInstance().memberLogout();}
+                    else if (choose == 2) {/*영화 추천*/MovieView.getInstance().showRecommendedMovies();}
+                    else if (choose == 3) {/*영화 검색*/MovieView.getInstance().genreMovie();}
+                    else if (choose == 4) {/*리뷰보기*/ReviewView.getInstance().ReveiwPrint();}
+                    else if (choose == 5) {/*리뷰쓰기*/ReviewView.getInstance().ReveiwWrite();}
+                    else if (choose == 6) {/*로그아웃*/MemberView.getInstance().memberLogout();}
             }
 
 

@@ -11,8 +11,8 @@ public class ReviewController {
     public static ReviewController getInstance(){return reviewController;}
     //싱글톤 작업
 
-    public boolean reviewWrite(String content,int star,boolean good){
-        ReviewDto reviewDto = new ReviewDto(content,star,good);
+    public boolean reviewWrite(String mvid, String content,int star,String member,boolean rv_Suggestion){
+        ReviewDto reviewDto = new ReviewDto(mvid,content,star,member,rv_Suggestion);
         return ReviewDao.getInstance().reviewWrite(reviewDto);}
 
     public ArrayList<ReviewDto> reviewPrint(){

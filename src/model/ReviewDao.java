@@ -44,12 +44,21 @@ public class ReviewDao extends Dao {
 
         public boolean reviewWrite(ReviewDto reviewDto) {
             //1. 리뷰 데이터 베이스 추가하는 SQL작성
-            String sql = "insert into review(rv_date,rv_content,rv_star,rv_suggestion) values(now(),?,?,?);";
+
+            //rv_id/rv_name/rv_data/rv_star/rv_content/rv_member/rv_suggestion
+            //1 / 소방관 / 202401210 / 5 /재밌어요 / abc / true
+
+            String sql = "insert into review(rv_name,rv_date,rv_star,rv_content,rv_member,rv_suggestion) values(?,now(),?,?,?,?);";
             try{
             PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setString(1, reviewDto.getRv_Content());
-            ps.setInt(2, reviewDto.getRv_Star());
-            ps.setBoolean(3, reviewDto.getRv_Suggestion());
+//                String mvid, String content,int star,String member,boolean rv_Suggestion
+
+            ps.setString(1,reviewDto.getRv_Name());
+                ps.setInt(2, reviewDto.getRv_Star());
+            ps.setString(3, reviewDto.getRv_Content());
+            ps.setString(4,reviewDto.getRv_Member());
+
+            ps.setBoolean(5, reviewDto.getRv_Suggestion());
 
             ps.executeUpdate();
         }catch(SQLException e){e.printStackTrace();}

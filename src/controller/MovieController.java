@@ -41,6 +41,10 @@ public class MovieController {
         return MovieDao.getInstance().getRecommendedMovies(genre, director, actor, movieClass);
     }
 
-
+    // 장르에 맞는 영화 가져오기
+    public ArrayList<MovieDto> genreMovie(String genre) {   // e start
+        ArrayList<MovieDto> result = MovieDao.getInstance().genreMovie(genre);
+        return result;
+    }   // e end
 
 }
