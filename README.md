@@ -12,6 +12,7 @@
 #팀원 소개 및 역활
   
 #ERD 다이어그램 캡처 사진
+
 ![image](https://github.com/user-attachments/assets/1481c9c2-7629-4585-a769-4f11a82335bd)
 
 
