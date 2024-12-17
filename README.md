@@ -25,4 +25,4 @@
 ![image](https://github.com/user-attachments/assets/1481c9c2-7629-4585-a769-4f11a82335bd)
 
 # 프로젝트 실행 결과를 녹화(링크)
-  -
+  - 구현 동영상 <https://youtu.be/auTSupa5q2o>
